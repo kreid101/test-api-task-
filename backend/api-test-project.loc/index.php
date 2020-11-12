@@ -4,11 +4,11 @@ include('Route.php');
 header('Access-Control-Allow-Origin: *');
 if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
 echo"200";
-header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Origin: *');
 }
 // Add base route (startpage)
 Route::add('/',function(){
-header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Origin: *');
      $servername = "localhost";
      $username = "root";
      $password = "";
@@ -45,7 +45,7 @@ Route::add('/contact-form',function(){
 
 // Post route example
 Route::add('/contact-form',function(){
-header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Origin: *');
     $servername = "localhost";
     $username = "root";
     $password = "";
