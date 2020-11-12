@@ -57,7 +57,8 @@ export default {
       const bodyFormData = new FormData()
       bodyFormData.append('name', this.name)
       bodyFormData.append('price', this.price)
-      axios.post('http://api-test-project.loc/contact-form', bodyFormData, config).then(this.getproduct(), this.name = '', this.price = '')
+      axios.post('http://api-test-project.loc/contact-form', bodyFormData, config).then(res => { this.getproduct(); this.name = ''; this.price = ''; console.log(res.response) })
+
     },
     getproduct: function () {
       axios.get('http://api-test-project.loc').then(res => { this.product = res.data })
